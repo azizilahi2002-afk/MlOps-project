@@ -1,0 +1,19 @@
+# .pre-commit-config.yaml
+repos:
+  - repo: https://github.com/psf/black
+    rev: 24.4.2 # Utilisez une version récente
+    hooks:
+      - id: black
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.4 # Utilisez une version récente
+    hooks:
+      - id: ruff
+        args: [--fix] # Pour corriger automatiquement les erreurs
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0 # Utilisez une version récente
+    hooks:
+      - id: detect-secrets
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.7.1
+    hooks:
+      - id: nbstripout
