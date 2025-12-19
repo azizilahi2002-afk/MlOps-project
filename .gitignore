@@ -1,5 +1,2 @@
 # .gitignore
 .env
-*.pkl
-*.csv
-*.png
