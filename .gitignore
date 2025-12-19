@@ -1,9 +1,5 @@
 # .gitignore
 .env
-data/raw/
-data/processed/
-models/
 *.pkl
 *.csv
 *.png
-reports/
