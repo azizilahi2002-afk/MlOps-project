@@ -9,3 +9,4 @@ pydantic
 pyarrow
 fastparquet
 matplotlib
+seaborn
