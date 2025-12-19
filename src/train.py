@@ -19,9 +19,7 @@ warnings.filterwarnings("ignore")
 
 # ... Le reste du code sans nouveaux imports ...
 
-df = pd.read_parquet(
-    r"C:\\Users\\azizi\\mini-mlops-project\\data\\processed\\features_daily.parquet"
-)
+df = pd.read_parquet("data/processed/features_daily.parquet")
 
 X = df[["ca_total", "nb_commandes"]]
 Y = df["label"]
@@ -45,7 +43,7 @@ print(f"RMSE : {rmse:.2f}")
 print(f"R2   : {r2:.3f}")
 
 
-model_path = Path("C:/Users/azizi/mini-mlops-project/models/random_forest_model.pkl")
+model_path = Path("models/random_forest_model.pkl")
 model_path.parent.mkdir(parents=True, exist_ok=True)
 joblib.dump(model, model_path)
 print(f"\nModèle sauvegardé: {model_path}")
