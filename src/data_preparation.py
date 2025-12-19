@@ -16,9 +16,9 @@ if "date" not in df.columns:
     date_range = pd.date_range(
         start="2024-01-01",
         end="2024-01-30 23:59:59",
-        periods=len(df)  # répartir uniformément les 10000 lignes sur 30 jours
+        periods=len(df),  # répartir uniformément les 10000 lignes sur 30 jours
     )
-    
+
     # On ne garde que la partie date (sans heure)
     df["date"] = date_range.date
 
@@ -41,10 +41,11 @@ print(f"Colonne de prix détectée : {price_col}")
 print("3) Calcul des indicateurs quotidiens...")
 
 # Agrégation quotidienne
-daily = df.groupby("date").agg(
-    ca_total=(price_col, "sum"),
-    nb_commandes=(price_col, "count")
-).reset_index()
+daily = (
+    df.groupby("date")
+    .agg(ca_total=(price_col, "sum"), nb_commandes=(price_col, "count"))
+    .reset_index()
+)
 
 # 4) Label = CA du jour suivant
 daily["label"] = daily["ca_total"].shift(-1)
@@ -60,4 +61,4 @@ print("\nPipeline terminé.")
 print(f"Fichier sauvegardé : {OUT_PATH}")
 print("Nombre de lignes :", len(daily))
 print("Colonnes :", list(daily.columns))
-print("Dates min/max :", daily['date'].min(), "->", daily['date'].max())
+print("Dates min/max :", daily["date"].min(), "->", daily["date"].max())

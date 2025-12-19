@@ -1,0 +1,12 @@
+# .dockerignore
+__pycache__/
+*.pyc
+.venv/
+.git/
+.pytest_cache/
+data/raw/  # Ne pas inclure les données brutes
+data/processed/ # Ne pas inclure les données traitées
+models/ # Le modèle sera entraîné dans le CI et copié si besoin
+reports/
+notebooks/
+.vscode/
