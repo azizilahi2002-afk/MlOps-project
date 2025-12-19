@@ -10,3 +10,5 @@ pyarrow
 fastparquet
 matplotlib
 seaborn
+requests
+seaborn
