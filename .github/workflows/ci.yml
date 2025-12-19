@@ -122,7 +122,6 @@ jobs:
       - name: Validate Kubernetes manifests
         uses: docker://ghcr.io/yannh/kubeconform:latest
         with:
-          entrypoint: kubeconform
           args: "-strict -ignore-missing-schemas k8s/*.yaml"
 
       - name: Lint Kubernetes manifests
