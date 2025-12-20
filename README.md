@@ -3,7 +3,7 @@
 **Prédiction du chiffre d’affaires journalier**
 ## Badge
 
-[![CI/CD Pipeline](https://github.com/azizilahi2002-afk/mlops/actions/workflows/ci.yml/badge.svg)](https://github.com/azizilahi2002-afk/mlops/actions/workflows/ci.yml)
+[![CI/CD Pipeline](https://github.com/azizilahi2002-afk/MlOps-project/actions/workflows/ci.yml/badge.svg)](https://github.com/azizilahi2002-afk/MlOps-project/actions/workflows/ci.yml)
 
 
 
