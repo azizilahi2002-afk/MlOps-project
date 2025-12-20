@@ -128,7 +128,7 @@ jobs:
         run: |
           docker run --rm -v $(pwd):/project \
             stackrox/kube-linter:latest lint \
-            /project/k8s/*.yaml
+            /project/k8s/
   deploy-dry-run:
     runs-on: ubuntu-latest
     needs: k8s-validation
