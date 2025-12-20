@@ -123,6 +123,12 @@ jobs:
         uses: docker://ghcr.io/yannh/kubeconform:latest
         with:
           args: "-strict -ignore-missing-schemas k8s/"
+
+      - name: Lint Kubernetes manifests
+        run: |
+          docker run --rm -v $(pwd):/project \
+            stackrox/kube-linter:latest lint \
+            /project/k8s/*.yaml
   deploy-dry-run:
     runs-on: ubuntu-latest
     needs: k8s-validation
@@ -136,4 +142,4 @@ jobs:
 
       - name: Dry-run deployment
         run: |
-          kubectl apply -f k8s/ --dry-run=client --validate=true
+          kubectl apply -f k8s/ --dry-run=client --validate=false
