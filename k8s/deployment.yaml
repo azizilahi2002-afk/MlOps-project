@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mlops-app
-          image: ds-app:latest
+          image: ds-app:v1.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
